@@ -12,7 +12,7 @@
     <div class="cont">
         <section class="introducir">
             <h1 class="titulo1">CREAR CUENTA</h1><br>
-            <form action="php/registrar.php" method="post">
+            <form action="php/crear_cuenta.php" method="post">
                 <label>Nombre</label>
                 <input class="d2" type="text" name="nombre" placeholder="Nombre">
                 <label>Apellido</label>
