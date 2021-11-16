@@ -35,8 +35,8 @@ if ($nombre != "" && $apellido != "" && $correo != "" && $usuario != "" && $cont
 
     // ----------- agregar usuario -----------
     $insertar= "INSERT INTO usuarios(
-        nombre, apellido, correo, usuario, pass, img_usuario, estado) 
-        VALUES ('$nombre','$apellido','$correo','$usuario','$contra', '', 'conectado')";
+        nombre, apellido, correo, usuario, pass) 
+        VALUES ('$nombre','$apellido','$correo','$usuario','$contra')";
 
     $resultado=mysqli_query($conexion, $insertar);
     if ($resultado) {
