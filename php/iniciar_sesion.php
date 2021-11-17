@@ -1,34 +1,3 @@
-<?php
-
-// incluir la conexion a la base de datos
-include("conexion.php");
-
-if (isset($_POST['iniciar_s'])) {
-    $correo = $_POST['correo'];
-    $usuario = $_POST['usuario'];
-    $contra = $_POST['contra'];
-
-    if ($correo != "" && $usuario != "" && $contra != "") {
-        // buscar si los campos de correo, usuario y contra estan en la tabla de usuario
-        $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND 
-        usuario = '$usuario' AND pass = '$contra'");
-
-        if (mysqli_num_rows($encontrar_usuario ) > 0) {
-            echo "<script>window.location='chat.php'</script>";
-        } else {
-            echo "<script>
-            alert('Cuenta no econtrada');
-            window.history.go(-1);
-            </script>";
-            exit;
-        }
-    } else {
-        echo "<script> alert('Todos los campos son obligatorios');
-        window.history.go(-1);</script>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,7 +14,7 @@ if (isset($_POST['iniciar_s'])) {
     <div class="cont">
         <section class="introducir">
             <h1 class="titulo1">INICIAR SESION</h1><br>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="chat.php" method="post">
                 <label>Correo</label>
                 <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com"><br>
                 <label>Usuario</label>
