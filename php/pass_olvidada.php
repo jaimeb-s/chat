@@ -1,31 +1,32 @@
 <?php
 
+// validar los campos
+include("validar_p_o.php");
+
 // incluir la conexion a la base de datos
 include("conexion.php");
 
 if (isset($_POST['cambiar_pass'])) {
-    $correo = $_POST['correo'];
-    $usuario = $_POST['usuario'];
-    $contra_nueva = $_POST['contra'];
-
-    if ($correo != "" && $usuario != "" && $contra_nueva != "") {
-        // buscar si los campos de correo, usuario estan en la tabla de usuario
-        $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND 
-        usuario = '$usuario'");
-
+    if (empty($correo_error) && empty($usuario_error) && empty($contra_error)) {
+        
+        // buscar si los campos de correo de usuario estan en la tabla de usuario
+        $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND usuario = '$usuario'");
+        
         if (mysqli_num_rows($encontrar_usuario ) > 0) {
-            $cambiar_pass = "UPDATE usuarios SET pass = '$contra_nueva' WHERE correo = '$correo' AND 
-            usuario = '$usuario'";
+
+            $cambiar_pass = "UPDATE usuarios SET pass = '$contra' WHERE correo = '$correo' AND usuario = '$usuario'";
 
             $res = mysqli_query($conexion, $cambiar_pass);
 
             if ($res) {
-                echo "<script> alert('Cuenta encontrada, contraseña cambiada correctamente');
-                window.location='iniciar_sesion.php'</script>";
+                echo "<script>
+                    alert('Cuenta encontrada, contraseña cambiada correctamente');
+                    window.location='iniciar_sesion.php'
+                </script>";
             } else {
                 echo "<script>
-                alert('Error, no se pudo cambiar la contraseña');
-                window.history.go(-1);
+                    alert('Error, no se pudo cambiar la contraseña');
+                    window.history.go(-1);
                 </script>";
             }
         } else {
@@ -35,14 +36,8 @@ if (isset($_POST['cambiar_pass'])) {
             </script>";
             exit;
         }
-    } else {
-        echo "<script> alert('Todos los campos son obligatorios');
-        window.history.go(-1);</script>";
-    }
-    
+    } 
 }
-
-
 
 ?>
 
@@ -62,21 +57,30 @@ if (isset($_POST['cambiar_pass'])) {
     <div class="cont">
         <section class="introducir">
             <h1 class="titulo1">CAMBIAR CONTRASEÑA</h1><br>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <label>Correo</label>
-                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com"><br>
+                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com" value="<?php if (isset($correo)) {
+                    echo $correo;
+                } ?>">
+                <span> <?php echo $correo_error; ?></span>
+                <br>
                 <label>Usuario</label>
-                <input class="d2" type="text" name="usuario" placeholder="Usuario"><br>
+                <input class="d2" type="text" name="usuario" placeholder="Usuario" value="<?php if (isset($usuario)) {
+                    echo $usuario;
+                } ?>">
+                <span> <?php echo $usuario_error; ?></span>
+                <br>
                 <label>Contraseña Nueva</label>
-                <input class="d2" type="password" name="contra" placeholder="**********"><br>
+                <input class="d2" type="password" name="contra" placeholder="**********" value="<?php if (isset($contra)) {
+                    echo $contra;
+                } ?>">
+                <span> <?php echo $contra_error; ?></span>
+                <br>
                 <input class="boton" type="submit" value="Cambiar Contraseña" name="cambiar_pass">
                 <p>Usuario nuevo?<a href="../index.php">Crear cuenta</a></p>
                 <p>Ya tienes una cuenta?<a href="iniciar_sesion.php">Iniciar sesion</a></p>
             </form>
         </section>
-        <div class="img">
-            <img src="../img/chat.png" alt="" sizes="" srcset="">
-        </div>
     </div>
 </body>
 </html>

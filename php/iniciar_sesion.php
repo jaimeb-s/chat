@@ -1,3 +1,44 @@
+<?php
+
+session_start();
+
+// validar los campos
+include("validar_i_s.php");
+
+// incluir la conexion a la base de datos
+include("conexion.php");
+
+if (isset($_POST['iniciar_s'])) {
+    if (empty($correo_error) && empty($usuario_error) && empty($contra_error)) {
+        
+        // buscar si los campos de correo, usuario y contra estan en la tabla de usuario
+        $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND 
+        usuario = '$usuario' AND pass = '$contra'");
+
+        // TODO: checar esta parte para la sesion
+        if (mysqli_num_rows($encontrar_usuario) > 0) {
+            $r = mysqli_fetch_assoc($encontrar_usuario);
+            $_SESSION['id_u'] = $r['id_usuario'];
+            $_SESSION['nombre_u'] = $r['nombre'];
+            $_SESSION['apellido_u'] = $r['apellido'];
+            $_SESSION['correo_u'] = $r['correo'];
+            $_SESSION['usuario_u'] = $r['usuario'];
+            $_SESSION['pass_u'] = $r['pass'];
+
+            header("Location: chat.php?" . SID);
+
+        } else {
+            echo "<script>
+                alert('Cuenta no encontrada, verificar sus datos');
+                window.history.go(-1);
+                </script>";
+            exit;
+        }        
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,21 +55,27 @@
     <div class="cont">
         <section class="introducir">
             <h1 class="titulo1">INICIAR SESION</h1><br>
-            <form action="chat.php" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <label>Correo</label>
-                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com"><br>
+                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com" value="<?php if (isset($correo)) {
+                    echo $correo;
+                } ?>">
+                <span> <?php echo $correo_error; ?> </span>
                 <label>Usuario</label>
-                <input class="d2" type="text" name="usuario" placeholder="Usuario"><br>
+                <input class="d2" type="text" name="usuario" placeholder="Usuario" value="<?php if (isset($usuario)) {
+                    echo $usuario;
+                } ?>">
+                <span> <?php echo $usuario_error; ?> </span>
                 <label>Contraseña</label>
-                <input class="d2" type="password" name="contra" placeholder="**********"><br>
+                <input class="d2" type="password" name="contra" placeholder="**********" value="<?php if (isset($contra)) {
+                    echo $contra;
+                } ?>">
+                <span> <?php echo $contra_error; ?> </span>
                 <input class="boton" type="submit" value="Iniciar Sesion" name="iniciar_s">
                 <p>Usuario nuevo?<a href="../index.php">Crear cuenta</a></p>
                 <p><a href="pass_olvidada.php">Has olvidado tu contraseña</a></p>
             </form>
         </section>
-        <div class="img">
-            <img src="../img/chat.png" alt="" sizes="" srcset="">
-        </div>
     </div>
 </body>
 </html>

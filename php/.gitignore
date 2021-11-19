@@ -1,0 +1,14 @@
+*
+
+!.gitignore
+!crear_cuenta.php
+!validar_c_c.php
+!conexion.php
+
+!inicar_sesion.php
+!validar_i_s.php
+
+!pass_olvidada.php
+!validar_p_o.php
+
+!chat.php
