@@ -15,7 +15,6 @@ if (isset($_POST['iniciar_s'])) {
         $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND 
         usuario = '$usuario' AND pass = '$contra'");
 
-        // TODO: checar esta parte para la sesion
         if (mysqli_num_rows($encontrar_usuario) > 0) {
             $r = mysqli_fetch_assoc($encontrar_usuario);
             $_SESSION['id_u'] = $r['id_usuario'];
@@ -54,26 +53,26 @@ if (isset($_POST['iniciar_s'])) {
 <body>
     <div class="cont">
         <section class="introducir">
-            <h1 class="titulo1">INICIAR SESION</h1><br>
+            <h1 class="titulo2">INICIAR SESION</h1><br>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <label>Correo</label>
-                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com" value="<?php if (isset($correo)) {
+                <input class="d2" type="email" name="correo" value="<?php if (isset($correo)) {
                     echo $correo;
-                } ?>">
-                <span> <?php echo $correo_error; ?> </span>
+                } ?>"><br>
+                <span class="error"> <?php echo $correo_error; ?> </span><br>
                 <label>Usuario</label>
-                <input class="d2" type="text" name="usuario" placeholder="Usuario" value="<?php if (isset($usuario)) {
+                <input class="d2" type="text" name="usuario" value="<?php if (isset($usuario)) {
                     echo $usuario;
-                } ?>">
-                <span> <?php echo $usuario_error; ?> </span>
+                } ?>"><br>
+                <span class="error"> <?php echo $usuario_error; ?> </span><br>
                 <label>Contraseña</label>
-                <input class="d2" type="password" name="contra" placeholder="**********" value="<?php if (isset($contra)) {
+                <input class="d2" type="password" name="contra" value="<?php if (isset($contra)) {
                     echo $contra;
-                } ?>">
-                <span> <?php echo $contra_error; ?> </span>
-                <input class="boton" type="submit" value="Iniciar Sesion" name="iniciar_s">
-                <p>Usuario nuevo?<a href="../index.php">Crear cuenta</a></p>
-                <p><a href="pass_olvidada.php">Has olvidado tu contraseña</a></p>
+                } ?>"><br>
+                <span class="error"> <?php echo $contra_error; ?> </span><br>
+                <input class="boton" type="submit" value="Iniciar" name="iniciar_s">
+                <input class="boton2" type="button" onclick="location.href='../index.php';" value="Crear cuenta">
+                <p class="renova_contra"><a href="pass_olvidada.php" style="color: #0A81AB">¿Has olvidado tu contraseña?</a></p>
             </form>
         </section>
     </div>

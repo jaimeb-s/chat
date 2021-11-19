@@ -56,29 +56,29 @@ if (isset($_POST['cambiar_pass'])) {
 <body>
     <div class="cont">
         <section class="introducir">
-            <h1 class="titulo1">CAMBIAR CONTRASEÑA</h1><br>
+            <h1 class="titulo3">CAMBIAR CONTRASEÑA</h1><br>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <label>Correo</label>
-                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com" value="<?php if (isset($correo)) {
+                <input class="d2" type="email" name="correo" value="<?php if (isset($correo)) {
                     echo $correo;
-                } ?>">
-                <span> <?php echo $correo_error; ?></span>
+                } ?>"><br>
+                <span class="error"> <?php echo $correo_error; ?></span>
                 <br>
                 <label>Usuario</label>
-                <input class="d2" type="text" name="usuario" placeholder="Usuario" value="<?php if (isset($usuario)) {
+                <input class="d2" type="text" name="usuario" value="<?php if (isset($usuario)) {
                     echo $usuario;
-                } ?>">
-                <span> <?php echo $usuario_error; ?></span>
+                } ?>"><br>
+                <span class="error"> <?php echo $usuario_error; ?></span>
                 <br>
                 <label>Contraseña Nueva</label>
-                <input class="d2" type="password" name="contra" placeholder="**********" value="<?php if (isset($contra)) {
+                <input class="d2" type="password" name="contra" value="<?php if (isset($contra)) {
                     echo $contra;
-                } ?>">
-                <span> <?php echo $contra_error; ?></span>
+                } ?>"><br>
+                <span class="error"> <?php echo $contra_error; ?></span>
                 <br>
-                <input class="boton" type="submit" value="Cambiar Contraseña" name="cambiar_pass">
-                <p>Usuario nuevo?<a href="../index.php">Crear cuenta</a></p>
-                <p>Ya tienes una cuenta?<a href="iniciar_sesion.php">Iniciar sesion</a></p>
+                <input class="boton9" type="submit" value="Cambiar Contraseña" name="cambiar_pass"><br>
+                <input class="boton" type="button" onclick="location.href='../index.php';" value="Crear cuenta">
+                <input class="boton2" type="button" onclick="location.href='iniciar_sesion.php';" value="Iniciar sesion">
             </form>
         </section>
     </div>

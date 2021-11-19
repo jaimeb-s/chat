@@ -21,34 +21,34 @@ include("php/crear_cuenta.php");
 <body>
     <div class="cont">
         <section class="introducir">
-            <h1 class="titulo1">CREAR CUENTA</h1><br>
+            <h1 class="titulo1">CREAR CUENTA</h1><br><br>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-                <label>Nombre</label>
-                <input class="d2" type="text" name="nombre" placeholder="Nombre" value="<?php if (isset($nombre)) {
+                <label><b>Nombre</b></label>
+                <input class="d2" type="text" name="nombre"  value="<?php if (isset($nombre)) {
                     echo $nombre;
-                } ?>">
-                <span> <?php echo $nombre_error; ?> </span>
-                <label>Apellido</label>
-                <input class="d2" type="text" name="apellido" placeholder="Apellido" value="<?php if (isset($apellido)) {
+                } ?>"><br>
+                <span class="error"> <?php echo $nombre_error; ?> </span><br>
+                <label><b>Apellido</b></label>
+                <input class="d2" type="text" name="apellido"  value="<?php if (isset($apellido)) {
                     echo $apellido;
-                } ?>">
-                <span> <?php echo $apellido_error; ?> </span>
-                <label>Correo</label>
-                <input class="d2" type="email" name="correo" placeholder="nombre@ejemplo.com" value="<?php if (isset($correo)) {
+                } ?>"><br>
+                <span class="error"> <?php echo $apellido_error; ?> </span><br>
+                <label><b>Correo</b></label>
+                <input class="d2" type="email" name="correo" value="<?php if (isset($correo)) {
                     echo $correo;
-                } ?>">
-                <span> <?php echo $correo_error; ?> </span>
-                <label>Usuario</label>
-                <input class="d2" type="text" name="usuario" placeholder="Usuario" value="<?php if (isset($usuario)) {
+                } ?>"><br>
+                <span class="error"> <?php echo $correo_error; ?> </span><br>
+                <label><b>Usuario</b></label>
+                <input class="d2" type="text" name="usuario" value="<?php if (isset($usuario)) {
                     echo $usuario;
-                } ?>">
-                <span> <?php echo $usuario_error; ?> </span>
-                <label>Contraseña</label>
-                <input class="d2" type="password" name="contra" placeholder="**********" value="<?php if (isset($contra)) {
+                } ?>"><br>
+                <span class="error"> <?php echo $usuario_error; ?> </span><br>
+                <label><b>Contraseña</b></label>
+                <input class="d2" type="password" name="contra" value="<?php if (isset($contra)) {
                     echo $contra;
-                } ?>">
-                <span> <?php echo $contra_error; ?> </span>
-                <input class="boton" type="submit" value="Crear cuenta" name="crear_cuenta">
+                } ?>"><br>
+                <span class="error"> <?php echo $contra_error; ?> </span><br>
+                <input class="boton" type="submit" value="Crear" name="crear_cuenta">
                 <input class="boton2" type="button" onclick="location.href='php/iniciar_sesion.php';" value="Iniciar sesion">
             </form>
         </section>

@@ -5,18 +5,18 @@ session_start();
 // incluir la conexion a la base de datos
 include("conexion.php");
 
-echo $_SESSION['id_u'];
-echo $_SESSION['nombre_u'];
-echo $_SESSION['apellido_u'];
-echo $_SESSION['correo_u'];
-echo $_SESSION['usuario_u'];
-echo $_SESSION['pass_u'];
+// echo $_SESSION['id_u'];
+// echo $_SESSION['nombre_u'];
+// echo $_SESSION['apellido_u'];
+// echo $_SESSION['correo_u'];
+// echo $_SESSION['usuario_u'];
+// echo $_SESSION['pass_u'];
 
-// $id_u = $_GET['id'];
-// $usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_u'";
+$id_u = $_SESSION['id_u'];
+$usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_u'";
 
-// $a = mysqli_query($conexion, $usuario);
-// $r = mysqli_fetch_assoc($a);
+$a = mysqli_query($conexion, $usuario);
+$r = mysqli_fetch_assoc($a);
 
 ?>
 
@@ -29,10 +29,30 @@ echo $_SESSION['pass_u'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="../chat.css"> -->
+    <link rel="stylesheet" href="../chat.css">
 </head>
 <body>
     <div>
+        <div>
+            <div class="datos_usuario">
+
+            </div>
+            <div class="datos_contacto">
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div class="chat"></div>
+    </div>
+
+
+
+
+
+
+
         <!-- <div class="datos_usuario">
             <p>< ?php // echo $r['nombre'] . " " . $r['apellido']; ?></p>
             <div>
@@ -64,7 +84,7 @@ echo $_SESSION['pass_u'];
 
 
         <!-- INSERT INTO `contactos` (`id_contacto`, `nombre`, `apellido`, `correo`, `usuario`, `id_usuario`) VALUES (NULL, 'jaime', 'barrios', 'jaimebar@gmail.com', 'jabar', '1'); -->
-        </div>
+        <!-- </div> -->
         <!-- <div class="mensajes"> -->
         <!-- INSERT INTO `mensajes` (`id_mensaje`, `mensaje`, `fecha`, `hora`, `id_usuario`, `id_contacto`) VALUES (NULL, 'hola', '2021-11-16', '17:59:32', '1', '1');
     1 -->
