@@ -2,16 +2,16 @@
 
 session_start();
 
-// validar los campos
+// Validar los campos
 include("validar_i_s.php");
 
-// incluir la conexion a la base de datos
+// Incluir la conexion a la base de datos
 include("conexion.php");
 
 if (isset($_POST['iniciar_s'])) {
     if (empty($correo_error) && empty($usuario_error) && empty($contra_error)) {
         
-        // buscar si los campos de correo, usuario y contra estan en la tabla de usuario
+        // Buscar si los campos de correo, usuario y contra estan en la tabla de usuario
         $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND 
         usuario = '$usuario' AND pass = '$contra'");
 
@@ -47,8 +47,6 @@ if (isset($_POST['iniciar_s'])) {
     <title>Chat - Inicar Sesion</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/style.css">
-    <!--Bootstrap-->
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
 </head>
 <body>
     <div class="cont">
@@ -72,7 +70,7 @@ if (isset($_POST['iniciar_s'])) {
                 <span class="error"> <?php echo $contra_error; ?> </span><br>
                 <input class="boton" type="submit" value="Iniciar" name="iniciar_s">
                 <input class="boton2" type="button" onclick="location.href='../index.php';" value="Crear cuenta">
-                <p class="renova_contra"><a href="pass_olvidada.php" style="color: #0A81AB">¿Has olvidado tu contraseña?</a></p>
+                <p class="renova_contra"><a href="pass_olvidada.php" style="color: #1A1A1B">¿Has olvidado tu contraseña?</a></p>
             </form>
         </section>
     </div>

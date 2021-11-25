@@ -2,15 +2,15 @@
 
 session_start();
 
-// incluir la conexion a la base de datos
+// Incluir la conexion a la base de datos
 include("conexion.php");
 
 if (isset($_POST['crear_cuenta'])) {
 
-    // verificar que no haya mensajes de errores en los campos
+    // Verificar que no haya mensajes de errores en los campos
     if (empty($nombre_error) && empty($apellido_error) && empty($correo_error) && empty($usuario_error) && empty($contra_error)) {
         
-        // validar si existe el correo 
+        // Validar si existe el correo 
         $validar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'");
         if (mysqli_num_rows($validar_correo) > 0) {
             echo "<script>
@@ -20,7 +20,7 @@ if (isset($_POST['crear_cuenta'])) {
             exit;
         }
 
-        // validar si existe el usuario
+        // Validar si existe el usuario
         $validar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario'");
         if (mysqli_num_rows($validar_usuario) > 0) {
             echo "<script>
@@ -35,8 +35,7 @@ if (isset($_POST['crear_cuenta'])) {
             nombre, apellido, correo, usuario, pass) 
             VALUES ('$nombre','$apellido','$correo','$usuario','$contra')";
         
-        // TODO: checar esta parte para la sesion
-        $resultado=mysqli_query($conexion, $insertar);
+        $resultado = mysqli_query($conexion, $insertar);
         if ($resultado) {
             echo "<script> alert('Cuenta creada correctamente'); </script>";
 

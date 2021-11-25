@@ -1,15 +1,15 @@
 <?php
 
-// validar los campos
+// Validar los campos
 include("validar_p_o.php");
 
-// incluir la conexion a la base de datos
+// Incluir la conexion a la base de datos
 include("conexion.php");
 
 if (isset($_POST['cambiar_pass'])) {
     if (empty($correo_error) && empty($usuario_error) && empty($contra_error)) {
         
-        // buscar si los campos de correo de usuario estan en la tabla de usuario
+        // Buscar si los campos de correo de usuario estan en la tabla de usuario
         $encontrar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND usuario = '$usuario'");
         
         if (mysqli_num_rows($encontrar_usuario ) > 0) {
@@ -50,8 +50,6 @@ if (isset($_POST['cambiar_pass'])) {
     <title>Chat - Cambiar Contraseña</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/style.css">
-    <!--Bootstrap-->
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
 </head>
 <body>
     <div class="cont">

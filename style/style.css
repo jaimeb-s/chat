@@ -21,18 +21,20 @@ body {
 
 .introducir{
 	width: 435px;
-	background: white;
+	background: #fff;
 	padding: 30px;
 	border-radius: 4px;
 	font-family: 'calibri';
 	color: black;
+	padding-right: 0;
+	border-right: 30px solid #333F44;
 }
 
 .titulo1{
 	font-size: 23px;
 	margin-left: 65px;
 	padding: 4px 0;
-    color: #0A81AB;
+    color: #1A1A1B;
     text-transform: uppercase;
 }
 
@@ -40,7 +42,7 @@ body {
 	font-size: 23px;
 	margin-left: 65px;
 	padding: 4px 0;
-    color: #0A81AB;
+    color: #1A1A1B;
     text-transform: uppercase;
 }
 
@@ -48,7 +50,7 @@ body {
 	font-size: 23px;
 	margin-left: 18px;
 	padding: 4px 0;
-    color: #0A81AB;
+    color: #1A1A1B;
     text-transform: uppercase;
 }
 label{
@@ -77,7 +79,7 @@ label{
 }
 .boton{
 	width: 42%;
-	background: #79B4B7;
+	background: #475266c7;
 	border: none;
 	padding: 12px;
 	color: white;
@@ -93,7 +95,7 @@ label{
 
 .boton2{
 	width: 42%;
-	background: #0A81AB;
+	background: #333F44;
 	border: none;
 	padding: 12px;
 	color: white;
@@ -108,7 +110,7 @@ label{
 }
 .boton9{
 	width: 85%;
-	background: #79B4B7;
+	background: #475266e7;
 	border: none;
 	padding: 12px;
 	color: white;
@@ -123,19 +125,19 @@ label{
     cursor: pointer;
 }
 .boton:hover {
-	background-color: #B8DFD8;
+	background-color: #CEE5D0;
 	color: black;
 }
 .boton2:hover {
-	background-color: #B8DFD8;
+	background-color: #CEE5D0;
 	color: black;
 }
 .boton9:hover {
-	background-color: #B8DFD8;
+	background-color: #CEE5D0;
 	color: black;
 }
 .renova_contra{
-	margin-left: 40px;
+	margin-left: 70px;
 	font-family: inherit;
     font-size: 12px;
     font-weight: semibold;

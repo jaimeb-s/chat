@@ -2,7 +2,7 @@
 
 session_start();
 
-// incluir la conexion a la base de datos
+// Incluir la conexion a la base de datos
 include("conexion.php");
 
 // echo $_SESSION['id_u'];
@@ -29,73 +29,46 @@ $r = mysqli_fetch_assoc($a);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../chat.css">
+    <link rel="stylesheet" href="../style/chat.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
     <div>
-        <div>
-            <div class="datos_usuario">
+        <div class="general">
 
-            </div>
-            <div class="datos_contacto">
+            <div class="chat">
+                <?php
 
-            </div>
-            <div>
+                include("mensaje.php")
 
-            </div>
-        </div>
-        <div class="chat"></div>
-    </div>
-
-
-
-
-
-
-
-        <!-- <div class="datos_usuario">
-            <p>< ?php // echo $r['nombre'] . " " . $r['apellido']; ?></p>
-            <div>
-                <p><a href="salir.php">Cerrar sesion</a></p>
-            </div>
-        </div>
-        <div class="datos_contacto">
-            <h2>Contactos</h2>
-            <p><a href="agregar_con.php?id=< ?php echo $id_u; ?>">Agregar contacto</a></p>
-            <p><a href="eliminar_cont.php?id=< ?php echo $id_u; ?>">Eliminar contacto</a></p>
-            <div>
-                < ?php 
-
-                //$contactos = "SELECT * FROM contactos WHERE id_usuario = '$id_u'";
-
-                $res = mysqli_query($conexion, $contactos);
-                while ($row = mysqli_fetch_assoc($res)) {
-                
                 ?>
+            </div>
+      
+            <div class="datos_usuario">
+                <i class="bi bi-person-circle "></i>
+                <p><?php echo $r['usuario']; ?> </p>
+            </div>
 
-                <a href="mensaje.php?id=< ?php echo $id_u . "&id_c=" . $row['id_contacto']; ?>">
-                    <div>
-                        <p> < ?php echo $row['usuario']; ?> </p>-->
-                        <!-- <p><a href="eliminar_cont.php?id=< ?php echo $row['id_contacto']; ?>" class="elim-cont">eliminar</a></p> -->
-                    <!-- </div>
-                </a>
-                < ?php } Mysqli_free_result($res);?>
-            </div> -->
+            <div class="datos_contacto" id="U_cont">
 
-
-        <!-- INSERT INTO `contactos` (`id_contacto`, `nombre`, `apellido`, `correo`, `usuario`, `id_usuario`) VALUES (NULL, 'jaime', 'barrios', 'jaimebar@gmail.com', 'jabar', '1'); -->
-        <!-- </div> -->
-        <!-- <div class="mensajes"> -->
-        <!-- INSERT INTO `mensajes` (`id_mensaje`, `mensaje`, `fecha`, `hora`, `id_usuario`, `id_contacto`) VALUES (NULL, 'hola', '2021-11-16', '17:59:32', '1', '1');
-    1 -->
-            <!--<section id="msj">
-
-            </section>
-            <section id="enviar">
-                <input type="text" name="" id="" placeholder="Escribe el mensaje ...">
-            </section>
-        </div> -->
-        
+            </div>
+            <script>
+                // Actualizar el div de contactos automaticamente
+                $(document).ready(function() {
+                    var refreshId = setInterval( function(){
+                        $('#U_cont').load('dato_chat.php?<?php echo SID; ?>');
+                    }, 1000 );
+                });
+            </script>
+        </div>
     </div>
+    <script src="../js/barra_abajo.js"></script>
+
+    <!-- TODO: eliminar este al ultimo si no se necesita
+    <script src="../js/confir.js"></script> -->
+
 </body>
 </html>

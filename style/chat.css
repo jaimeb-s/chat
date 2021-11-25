@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.general {
+    margin: auto;
+    margin-top: 50px;
+    width: 870px;
+    height: 520px;
+    background:none;
+    border-radius: 15px;
+}
+/* Chat */
+.chat {
+    float: right;
+    width: 640px;
+    height: 520px;
+    background-color: #acb6bf8c;
+    border-radius: 15px;
+}
+/* Cuando inicia y no tiene ningun chat abierto "selecione un chat" */ 
+.cont_txt {
+    width: 640px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.txt > p {
+    font-size: 20px;
+	text-transform: uppercase;
+	color: #ffffff;
+    font-weight: semibold;
+    line-height: 1;
+    letter-spacing: .2em;
+    text-align: center;
+}
+/*  */
+.chat > .details {
+    width: 640px;
+    height: 55px;
+    border-bottom: 1px solid #636161;
+    background-color: #1A1A1B;
+    border-radius: 15px 15px 0 0;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+}
+.chat > .details > .cont1 {
+    width: 500px;
+    margin-left: 7px;
+}
+
+/* Ocultar el de cerrar sesion */
+.chat > .details > .icono_op {
+    width: 140px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.chat > .details > .icono_op > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.icono_op div > p > .icon {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.icono_op div > p > .icon:hover {
+    background-color: #475266;
+    color: black;
+}
+.icono_op > div >.salir {
+    display: none;
+    text-align: center;
+}
+.icono_op > div > .salir > div > p > a {
+    text-decoration: none;
+    color: white;
+}
+.icono_op > div > .salir > div > p > a:hover {
+    color: #475266;
+}
+.icono_op>div:hover>.salir {
+    display: inline-flex;
+}
+
+/* Cuando es la primera ves que mensajea con otro usuario*/
+.content_txt {
+    width: 640px;
+    height: 385px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Area de mensajes enviados y recibidos */
+.most_msj {
+    width: 640px;
+    height: 385px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: none;
+    padding-bottom: 20px;
+    overflow-y: auto;
+    font-size: 20px;
+}
+/* Barra de desplazamiento de los mensajes */
+.most_msj::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+.most_msj::-webkit-scrollbar:vertical {
+    width: 6px;
+}
+.most_msj::-webkit-scrollbar-button:increment, .most_msj::-webkit-scrollbar-button {
+    display: none;
+}
+.most_msj::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.most_msj::-webkit-scrollbar-thumb {
+    background-color: #1A1A1B;
+    border-radius: 20px;
+    border: 1px solid #f1f2f3;
+}
+.most_msj::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+/* Mostrar mensaje de remitente y destinatario */
+.chat_remitente {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.chat_remitente > .detalles > p {
+    background-color: #37AA9C;
+    border-radius: 25px 25px 0 25px;
+    padding: 10px; 
+}
+
+.chat_destinatario {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.chat_destinatario > .detalles > p {
+    background-color: #333F44;
+    border-radius: 0 25px 25px 25px;
+    padding: 10px;
+}
+
+/* Formulario para enviar mensajes */
+.env_msj {
+    height: 80px;
+    border-top: 1px solid #636161;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    display: inline-flex;
+}
+.msg{
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    height: 50px;
+    width: 540px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 15px;
+}
+.msg:focus{
+    box-shadow: none;
+    outline: 0px;
+}
+button {
+    border: none;
+    background-color: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+button:hover {
+    background-color: #1A1A1B;
+    color: #ffffff;
+}
+.icon_msj {
+    font-size: 28px;
+}
+
+/* Datos del usuario */
+.datos_usuario {
+    float: left;
+    width: 190px;
+    height: 55px;
+    background-color: #1A1A1B;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px 15px 0 0;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: none;
+    margin-bottom: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.datos_usuario:hover {
+    background-color: #475266;
+    color: black;
+}
+.datos_usuario p{
+    margin-left: 10px;
+}
+
+/* Datos de los contactos */
+.datos_contacto {
+    float: left;
+    width: 190px;
+    height: 465px;
+    background-color: #333F44;
+    cursor: pointer;
+    border-radius: 0 0 15px 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: none;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+/* Barra de desplazamiento para contactos */
+.datos_contacto::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+.datos_contacto::-webkit-scrollbar:vertical {
+    width: 6px;
+}
+.datos_contacto::-webkit-scrollbar-button:increment, .datos_contacto::-webkit-scrollbar-button {
+    display: none;
+}
+.datos_contacto::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.datos_contacto::-webkit-scrollbar-thumb {
+    background-color: #1A1A1B;
+    border-radius: 20px;
+    border: 1px solid #f1f2f3;
+}
+.datos_contacto::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+/* Selecionar chat */
+.content {
+    color:white;
+	height: 50px;
+}
+.content:hover {
+    background: rgba(34,34,34,0.75);
+    background-color: rgba(0,0,0,0.1);
+}
+.details span{
+    font-size: 20px;
+	color: white;
+    margin-left: 7px;
+}
+.details p{
+    font-size: 14px;
+	color: rgba(255,255,255,0.6);
+    margin-left: 10px;
+}
+ /* Icono de perfil */
+.bi-person-circle {
+    font-size: 30px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
