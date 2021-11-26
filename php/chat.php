@@ -53,22 +53,22 @@ $r = mysqli_fetch_assoc($a);
             </div>
 
             <div class="datos_contacto" id="U_cont">
-
+                <!-- < ?php include("dato_chat.php"); ?> -->
             </div>
             <script>
                 // Actualizar el div de contactos automaticamente
                 $(document).ready(function() {
                     var refreshId = setInterval( function(){
                         $('#U_cont').load('dato_chat.php?<?php echo SID; ?>');
-                    }, 1000 );
+                    }, 2500 );
                 });
             </script>
         </div>
     </div>
     <script src="../js/barra_abajo.js"></script>
 
-    <!-- TODO: eliminar este al ultimo si no se necesita
-    <script src="../js/confir.js"></script> -->
+    <!-- TODO: eliminar este al ultimo si no se necesita -->
+    <script src="../js/confir.js"></script>
 
 </body>
 </html>

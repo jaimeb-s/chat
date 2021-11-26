@@ -181,7 +181,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-form {
+.env_msj > form {
     background-color: rgba(0,0,0,0.3);
     border-radius: 15px;
     display: inline-flex;
@@ -200,7 +200,7 @@ form {
     box-shadow: none;
     outline: 0px;
 }
-button {
+.btn_env {
     border: none;
     background-color: transparent;
     padding-left: 10px;
@@ -208,7 +208,7 @@ button {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-button:hover {
+.btn_env:hover {
     background-color: #1A1A1B;
     color: #ffffff;
 }
@@ -279,15 +279,27 @@ button:hover {
 .datos_contacto::-webkit-scrollbar-track {
     border-radius: 10px;  
 }
+.c_cont_txt {
+    width: 190px;
+    height: 465px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Selecionar chat */
 .content {
     color:white;
 	height: 50px;
+    width: 190px;
+    display: inline-flex;
 }
-.content:hover {
+/* .content:hover {
     background: rgba(34,34,34,0.75);
     background-color: rgba(0,0,0,0.1);
+} */
+.details {
+    width: 150px;
 }
 .details span{
     font-size: 20px;
@@ -298,6 +310,30 @@ button:hover {
     font-size: 14px;
 	color: rgba(255,255,255,0.6);
     margin-left: 10px;
+}
+.icon_elim {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.icon_elim {
+    display: none;
+}
+.bi-trash-fill {
+    font-size: 25px;
+    margin-right: 7px;
+    color: red;
+}
+.content:hover {
+    background: rgba(34,34,34,0.75);
+    background-color: rgba(0,0,0,0.1);
+}
+.content:hover .icon_elim {
+    display: flex;
+}
+.bi-trash-fill:hover {
+    color: white;
 }
  /* Icono de perfil */
 .bi-person-circle {

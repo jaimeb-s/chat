@@ -34,7 +34,7 @@ if (isset($_GET['id_user'])) {
                 <input type="hidden" name="remitente" value="<?php  echo $id_u; ?>">
                 <input type="hidden" name="dest" value="<?php echo $ro['id_usuario']; ?>">
                 <input type="text" class="msg" name="mensaje" placeholder="Mensaje" autocomplete="off">
-                <button type="submit" name="enviar_msj"><i class="bi bi-send-fill icon_msj"></i></button>
+                <button type="submit" name="enviar_msj" class="btn_env"><i class="bi bi-send-fill icon_msj"></i></button>
             </form>
         </div>
 
