@@ -20,18 +20,27 @@ $roo = mysqli_fetch_assoc($res);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <!-- TODO: aplicar estilos -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/cont.css">
 </head>
 <body>
-    <form action="act_cont.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $roo['id_contacto']; ?>">
-        <input type="text" name="nombre" value="<?php echo $roo['nombre']; ?>">
-        <input type="text" name="apellido" value="<?php echo $roo['apellido']; ?>">
-        <input type="text" name="correo" value="<?php echo $roo['correo']; ?>" disabled>
-        <input type="text" name="usuario" value="<?php echo $roo['usuario']; ?>" disabled>
+    <div class="cont">
+        <section class="edicion">
+            <form action="act_cont.php" method="post">
+                <h1 class="titulo2">EDITAR CONTACTO</h1><br>
+                <input class="d3" type="hidden" name="id" value="<?php echo $roo['id_contacto']; ?>">
+                <label>Nombre</label>
+                <input class="d3" type="text" name="nombre" value="<?php echo $roo['nombre']; ?>">
+                <label>Apellido</label>
+                <input class="d3" type="text" name="apellido" value="<?php echo $roo['apellido']; ?>">
+                <label>Correo</label>
+                <input class="d4 in" type="text" name="correo" value="<?php echo $roo['correo']; ?>" disabled>
+                <label>Usuario</label>
+                <input class="d4 in" type="text" name="usuario" value="<?php echo $roo['usuario']; ?>" disabled>
 
-        <input type="submit" value="Editar contacto">
-
-    </form>
+                <input class="boton" type="submit" value="Editar contacto">
+            </form>
+        </section>
+    </div>
 </body>
 </html>

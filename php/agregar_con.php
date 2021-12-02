@@ -78,31 +78,37 @@ if (isset($_POST['agregar_contacto'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - Agregar contacto</title>
+    <link rel="stylesheet" href="../style/cont.css">
 </head>
 <body>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-        <label>Nombre</label>
-        <input type="text" name="nombre" placeholder="Nombre" value="<?php if (isset($nombre)) {
-            echo $nombre;
-        } ?>">
-        <span class="error"> <?php echo $nombre_error ?></span>
-        <label>Apellidos</label>
-        <input type="text" name="apellido" placeholder="Apellido" value="<?php if (isset($apellido)) {
-            echo $apellido;
-        } ?>">
-        <span class="error"> <?php echo $apellido_error ?></span>
-        <label>Correo</label>
-        <input type="email" name="correo" placeholder="nombre@ejemplo.com" value="<?php if (isset($correo)) {
-            echo $correo;
-        } ?>">
-        <span class="error"> <?php echo $correo_error ?></span>
-        <label>Usuario</label>
-        <input type="text" name="usuario" placeholder="Usuario" value="<?php if (isset($usuario)) {
-            echo $usuario;
-        } ?>">
-        <span class="error"> <?php echo $usuario_error ?></span>
-        <input type="hidden" name="id_usuario" value="<?php echo $id_u; ?>">
-        <input type="submit" value="Agregar usuario" name="agregar_contacto">
-    </form>
+    <div class="cont">
+        <section class="edicion">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+            <h1 class="titulo2">AGREGAR CONTACTO</h1><br>
+            <label>Nombre</label>
+            <input class="d3" type="text" name="nombre" value="<?php if (isset($nombre)) {
+                echo $nombre;
+            } ?>"><br>
+            <span class="error"> <?php echo $nombre_error ?></span><br>
+            <label>Apellidos</label>
+            <input class="d3" type="text" name="apellido" value="<?php if (isset($apellido)) {
+                echo $apellido;
+            } ?>"><br>
+            <span class="error"> <?php echo $apellido_error ?></span><br>
+            <label>Correo</label>
+            <input class="d3" type="email" name="correo" value="<?php if (isset($correo)) {
+                echo $correo;
+            } ?>"><br>
+            <span class="error"> <?php echo $correo_error ?></span><br>
+            <label>Usuario</label>
+            <input class="d3" type="text" name="usuario" value="<?php if (isset($usuario)) {
+                echo $usuario;
+            } ?>"><br>
+            <span class="error"> <?php echo $usuario_error ?></span><br>
+            <input class="d3" type="hidden" name="id_usuario" value="<?php echo $id_u; ?>">
+            <input class="boton" type="submit" value="Agregar usuario" name="agregar_contacto">
+        </form>
+        </section>
+    </div>
 </body>
 </html>

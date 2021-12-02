@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+	background-attachment: fixed;
+  	background-repeat: no-repeat;
+}
+.cont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.edicion{
+	width: 435px;
+	background: #fff;
+	padding: 30px;
+	border-radius: 4px;
+	font-family: 'calibri';
+	color: black;
+	padding-right: 0;
+	border-right: 30px solid #333F44;
+}
+
+.titulo2{
+	font-size: 23px;
+	margin-left: 75px;
+	padding: 4px 0;
+    color: #1A1A1B;
+    text-transform: uppercase;
+}
+
+.d3{
+	color:#99A799;
+	width: 85%;
+	margin-bottom:5px;
+	background: #D3E4CD;
+	padding: 12px 20px;
+	margin-bottom: 9px;
+    border: none;
+	border-radius: 3px;	
+}
+.d3:hover {
+	background-color: #DADDFC;
+	color: black;
+}
+.d4{
+	color:#99A799;
+	width: 85%;
+	margin-bottom:5px;
+	background: #D3E4CD;
+	padding: 12px 20px;
+	margin-bottom: 9px;
+    border: none;
+	border-radius: 3px;	
+}
+
+label{
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #99A799; 
+	font-size: 12px;
+    font-weight: semibold;
+    line-height: 1;
+    letter-spacing: .2em;
+}
+
+.boton{
+	width: 42%;
+	background: #475266c7;
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 16px 0;
+	cursor: pointer;
+	font-family: inherit;
+    font-size: 12px;
+    font-weight: semibold;
+    line-height: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 78px;
+}
+
+.boton:hover {
+	background-color: #CEE5D0;
+	color: black;
+}
+/* error para validar campos */
+.error {
+	color: #79b4b7ec;
+	font-size: 12px;
+}

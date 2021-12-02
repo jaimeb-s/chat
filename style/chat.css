@@ -383,8 +383,10 @@ body {
     border: none;
     border-radius: 0 0 15px 15px;
 	cursor: pointer;
+    background-color: #1A1A1B;
+    color: white;
 }
 .add_cont > button:hover {
-	background-color: #26b632;
+	background-color: #acb6bf8c;
 	color: black;
 }
