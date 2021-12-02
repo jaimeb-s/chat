@@ -48,8 +48,20 @@ $r = mysqli_fetch_assoc($a);
             </div>
       
             <div class="datos_usuario">
-                <i class="bi bi-person-circle "></i>
-                <p><?php echo $r['usuario']; ?> </p>
+                <div class="details">
+                    <div class="inf">
+                        <i class="bi bi-person-circle "></i>
+                        <p><?php echo $r['usuario']; ?> </p>
+                    </div>
+                    <div class="icono_op">
+                        <div>
+                            <div class="salir">
+                                <div><p><a href="salir.php">Cerrar sesion</a></p></div>
+                            </div>
+                            <p><i class="bi bi-three-dots-vertical icon"></i></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="datos_contacto" id="U_cont">
@@ -63,12 +75,12 @@ $r = mysqli_fetch_assoc($a);
                     }, 2500 );
                 });
             </script>
+            <div class="add_cont">
+                <button type="submit" onclick="location.href='agregar_con.php?<?php echo SID; ?>'">Agregar Contacto</button>
+            </div>
         </div>
     </div>
     <script src="../js/barra_abajo.js"></script>
-
-    <!-- TODO: eliminar este al ultimo si no se necesita -->
     <script src="../js/confir.js"></script>
-
 </body>
 </html>

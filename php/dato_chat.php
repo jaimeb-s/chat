@@ -46,17 +46,24 @@ if (mysqli_num_rows($query) > 0) {
         } else {
             $tu = "";
         }
-
         echo '<a href="chat.php?' . SID . '&id_user=' . $rooo['id_usuario'] . '">
-                <div class="content">
+                <div class="dato_cont">
                     <div class="details">
-                        <span>' . $rooo['usuario'] . '</span>
-                        <p>' . $tu . $msg . '</p>
-                    </div>
-                    <div class="icon_elim">
-                        <a href="eliminar_cont.php?id_contacto=' . $row['id_contacto'] . '" class="elim_cont">
-                            <i class="bi bi-trash-fill"></i>
-                        </a>
+                        <div class="info">
+                            <span>' . $row['nombre'] . '</span>
+                            <p>' . $tu . $msg . '</p>
+                        </div>
+                        <div class="icono_op_c">
+                            <div>
+                                <div class="ic">
+                                    <div><p><a href="eliminar_cont.php?id_contacto=' . $row['id_contacto'] . '" class="elim_cont"><i class="bi bi-trash-fill"></i></a></p></div>
+                                </div>
+                                <div class="ic">
+                                    <div><p><a href="editar_cont.php?' . SID . '&id_contacto=' . $row['id_contacto'] . '"><i class="bi bi-pencil-fill"></i></a></p></div>
+                                </div>
+                                <p><i class="bi bi-chevron-left"></i></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </a>';
@@ -65,7 +72,7 @@ if (mysqli_num_rows($query) > 0) {
     // Cuando no hay contactos agregados
     echo "<div class='c_cont_txt'>
             <div class='txt'>
-                <P>\"No hay contactos\"</p>
+                <P>\"Sin contactos\"</p>
             </div>
         </div>";
 }

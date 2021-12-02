@@ -7,21 +7,18 @@ if (isset($_GET['id_user'])) {
     $user_chat = mysqli_query($conexion, $u);
     if (mysqli_num_rows($user_chat) > 0) {
         $ro = mysqli_fetch_assoc($user_chat);
+        $uss = $ro['usuario'];
+
+        $c = "SELECT * FROM contactos WHERE usuario = '$uss'";
+        $con = mysqli_query($conexion, $c);
+        $raa = mysqli_fetch_assoc($con);
         ?>
 
         <div class="details">
             <i class="bi bi-person-circle"></i>
             <div class="cont1">
                 <span><?php echo $ro['usuario']; ?></span>
-                <p><?php echo $ro['nombre'] . " " . $ro['apellido']; ?></p>
-            </div>
-            <div class="icono_op">
-                <div>
-                    <div class="salir">
-                        <div><p><a href="salir.php">Cerrar sesion</a></p></div>
-                    </div>
-                    <p><i class="bi bi-three-dots-vertical icon"></p></i>
-                </div>
+                <p><?php echo $raa['nombre'] . " " . $raa['apellido']; ?></p>
             </div>
         </div>
 

@@ -55,50 +55,10 @@ body {
     display: inline-flex;
     align-items: center;
 }
-.chat > .details > .cont1 {
+/* .chat > .details > .cont1 {
     width: 500px;
     margin-left: 7px;
-}
-
-/* Ocultar el de cerrar sesion */
-.chat > .details > .icono_op {
-    width: 140px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.chat > .details > .icono_op > div {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.icono_op div > p > .icon {
-    font-size: 20px;
-    padding: 5px;
-    border-radius: 50%;
-}
-.icono_op div > p > .icon:hover {
-    background-color: #475266;
-    color: black;
-}
-.icono_op > div >.salir {
-    display: none;
-    text-align: center;
-}
-.icono_op > div > .salir > div > p > a {
-    text-decoration: none;
-    color: white;
-}
-.icono_op > div > .salir > div > p > a:hover {
-    color: #475266;
-}
-.icono_op>div:hover>.salir {
-    display: inline-flex;
-}
+} */
 
 /* Cuando es la primera ves que mensajea con otro usuario*/
 .content_txt {
@@ -217,7 +177,7 @@ body {
 }
 
 /* Datos del usuario */
-.datos_usuario {
+.datos_usuario > .details {
     float: left;
     width: 190px;
     height: 55px;
@@ -231,29 +191,75 @@ body {
     margin-top: none;
     margin-bottom: none;
     list-style: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
-.datos_usuario:hover {
+/* .datos_usuario:hover {
+    background-color: #475266;
+    color: black;
+} *//*
+.datos_usuario p{
+    margin-left: 10px;
+}*/
+
+.datos_usuario > .details > .inf {
+    width: 150px;
+    margin-left: 7px;
+    display: inline-flex;
+    align-items: center;
+
+}
+/* Ocultar el de cerrar sesion */
+.datos_usuario > .details > .icono_op {
+    width: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.datos_usuario > .details > .icono_op > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.icono_op div > p > .icon {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.icono_op div > p > .icon:hover {
     background-color: #475266;
     color: black;
 }
-.datos_usuario p{
-    margin-left: 10px;
+.icono_op > div >.salir {
+    display: none;
+    text-align: center;
+}
+.icono_op > div > .salir > div > p > a {
+    text-decoration: none;
+    color: white;
+}
+.icono_op > div > .salir > div > p > a:hover {
+    color: #475266;
+}
+.icono_op>div:hover>.salir {
+    display: inline-flex;
 }
 
 /* Datos de los contactos */
 .datos_contacto {
     float: left;
     width: 190px;
-    height: 465px;
+    height: 410px;
     background-color: #333F44;
     cursor: pointer;
-    border-radius: 0 0 15px 15px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: none;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     overflow-y: auto;
 }
 
@@ -281,23 +287,33 @@ body {
 }
 .c_cont_txt {
     width: 190px;
-    height: 465px;
+    height: 410px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Icono de perfil */
+.bi-person-circle {
+    font-size: 30px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
 /* Selecionar chat */
-.content {
+.dato_cont > .details {
     color:white;
 	height: 50px;
     width: 190px;
+
+    list-style: none;
     display: inline-flex;
+    align-items: center;
 }
-/* .content:hover {
+.dato_cont:hover {
     background: rgba(34,34,34,0.75);
     background-color: rgba(0,0,0,0.1);
-} */
+}
 .details {
     width: 150px;
 }
@@ -311,33 +327,64 @@ body {
 	color: rgba(255,255,255,0.6);
     margin-left: 10px;
 }
-.icon_elim {
-    width: 40px;
-    display: flex;
+.dato_cont > .details .info {
+    width: 160px;
+    margin-left: 7px;
+}
+/* Ocultar el de cerrar sesion */
+.dato_cont > .details > .icono_op_c {
+    width: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    display: inline-flex;
     align-items: center;
     justify-content: flex-end;
 }
-.icon_elim {
+.dato_cont > .details > .icono_op_c > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* icono de flecha */
+.icono_op_c div > p > .icon {
+    font-size: 18px;
+    /* padding: 5px; */
+    border-radius: 50%;
+}
+.icono_op_c div > p > .icon:hover {
+    color: #475266;
+}
+.icono_op_c > div >.ic {
     display: none;
+    text-align: center;
 }
-.bi-trash-fill {
-    font-size: 25px;
-    margin-right: 7px;
-    color: red;
-}
-.content:hover {
-    background: rgba(34,34,34,0.75);
-    background-color: rgba(0,0,0,0.1);
-}
-.content:hover .icon_elim {
-    display: flex;
-}
-.bi-trash-fill:hover {
+.icono_op_c > div > .ic > div > p > a {
+    text-decoration: none;
     color: white;
 }
- /* Icono de perfil */
-.bi-person-circle {
-    font-size: 30px;
-    margin-right: 5px;
-    margin-left: 10px;
+.icono_op_c > div > .ic > div > p > a:hover {
+    color: #475266;
+}
+.icono_op_c > div:hover>.ic {
+    display: inline-flex;
+}
+
+/* agragar contacto */
+.add_cont {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.add_cont > button {
+    height: 55px;
+    width: 190px;
+    border: none;
+    border-radius: 0 0 15px 15px;
+	cursor: pointer;
+}
+.add_cont > button:hover {
+	background-color: #26b632;
+	color: black;
 }
