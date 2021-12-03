@@ -77,7 +77,8 @@ if (isset($_POST['agregar_contacto'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat - Agregar contacto</title>
+    <title>Clover MI - Agregar contacto</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/cont.css">
 </head>
 <body>
