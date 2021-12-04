@@ -49,8 +49,8 @@ if (isset($_POST['crear_cuenta'])) {
                 $_SESSION['correo_u'] = $r['correo'];
                 $_SESSION['usuario_u'] = $r['usuario'];
                 $_SESSION['pass_u'] = $r['pass'];
-    
-                header("Location: php/chat.php?" . SID);
+
+                echo "<script> location.href='php/chat.php?" . SID ."';</script>";
             }
         } else {
         	echo "<script> alert('No se pudo crear la cuenta, we are sorry');
