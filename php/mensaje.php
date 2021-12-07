@@ -9,7 +9,7 @@ if (isset($_GET['id_user'])) {
         $ro = mysqli_fetch_assoc($user_chat);
         $uss = $ro['usuario'];
 
-        $c = "SELECT * FROM contactos WHERE usuario = '$uss'";
+        $c = "SELECT * FROM contactos WHERE usuario = '$uss' AND id_usuario = '$id_u'";
         $con = mysqli_query($conexion, $c);
         $raa = mysqli_fetch_assoc($con);
         ?>
